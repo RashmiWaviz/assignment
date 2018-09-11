@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<title>Javascript Tutorial</title>
+    
+<body style=background-color:grey>
+    
+    
+<div class="jumbotron text-center">    
+<div class="w3-container">
+<h1 style=text-align:center><u><i><b>JavaScript Accordions</b></i></u></h1>
+
+    
+<button onclick="myFunction('Demo1')" class="w3-button w3-block w3-right-align w3-purple">
+<b>HOME</b>
+</button>
+
+<div id="Demo1" class="w3-hide w3-container w3-right-align w3-purple">
+  <p>Lorem ipsdhgsbsyuvs  dhgsjdhvdb sdghjhagdjhfjh dgvdjsgvdsdvjhvjhsfvsjgvshdvhjdg ddsvhshdvjsdfvjhvsj</p>
+</div>
+    
+   <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-left-align w3-green">
+<b>ABOUT ACCORDIONS</b></button>
+
+<div id="Demo2" class="w3-hide w3-container w3-green">
+  <p>Lorem ipsum dfhksdbs .</p>
+</div>
+ 
+<button onclick="myFunction('Demo3')" class="w3-btn w3-block w3-blue">
+<b>ACCORDIONS CODING</b></button>
+
+<div id="Demo3" class="w3-hide w3-container w3-center w3-blue">
+  <p>Centered content as well!bvvghvjhvtdytvgdsrewrdrdrtrytddtydsfty fytsfydusfsgfyfu</p>
+</div>  
+    
+  </div>  
+    
+<script>
+function myFunction(id) {
+    var a = document.getElementById(id);
+    if (a.className.indexOf("w3-show") == -1) {
+        a.className += " w3-show";
+    } else { 
+        a.className = a.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+    
+    
+    </div>    
+</body>
+</html>
+    
