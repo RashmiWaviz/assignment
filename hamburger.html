@@ -1,0 +1,289 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hamburger in JavaScript</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="styles/nav.css">   
+
+<style>
+
+   .nav .a : hover{
+        
+        color: blue;
+        text-decoration: underline;
+    }
+.nav {
+    
+    
+
+  -webkit-transition: left 0.5s ease;
+
+  -moz-transition: left 0.5s ease;
+  -ms-transition: left 0.5s ease;
+
+  -o-transition: left 0.5s ease;
+
+  transition: left 0.5s ease;
+
+  background: #DC143C;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 2rem;
+
+  height: 100vh;
+
+  left: -20rem;
+
+  padding: 6rem 2rem 2rem 2rem;
+
+  position: fixed;
+
+  top: 0;
+
+  width: 22rem;
+
+  z-index: 1;
+
+}
+
+ 
+
+.nav.expanded { left: 0; }
+
+ 
+
+.nav ul {
+
+  position: absolute;
+
+  top: 50%;
+
+  -webkit-transform: translateY(-50%);
+
+  -ms-transform: translateY(-50%);
+
+  transform: translateY(-50%);
+
+  list-style: none;
+
+  margin: 0;
+
+  padding: 0;
+
+}
+    
+.nav-toggle {
+
+  -webkit-user-select: none;
+
+  -moz-user-select: none;
+
+  user-select: none;
+
+  cursor: pointer;
+
+  height: 2rem;
+
+  left: 0.5rem;
+
+  position: fixed;
+
+  top: 2rem;
+
+  width: 3rem;
+
+  z-index: 2;
+
+}
+
+ 
+
+.nav-toggle:hover { opacity: 0.8; }
+
+ 
+
+.nav-toggle .nav-toggle-bar,  .nav-toggle .nav-toggle-bar::after,  .nav-toggle .nav-toggle-bar::before {
+
+  position: absolute;
+
+  top: 50%;
+
+  -webkit-transform: translateY(-50%);
+
+  -ms-transform: translateY(-50%);
+
+  transform: translateY(-50%);
+
+  -webkit-transition: all 0.5s ease;
+
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+
+  -o-transition: all 0.5s ease;
+
+  transition: all 0.5s ease;
+
+  background: white;
+
+  content: '';
+
+  height: 0.4rem;
+
+  width: 100%;
+
+}
+    
+.nav-toggle .nav-toggle-bar { margin-top: 0; }
+
+ 
+
+.nav-toggle .nav-toggle-bar::after { margin-top: 0.8rem; }
+
+ 
+
+.nav-toggle .nav-toggle-bar::before { margin-top: -0.8rem; }
+
+ 
+.nav-toggle.expanded .nav-toggle-bar { background: transparent; }
+
+ 
+
+.nav-toggle.expanded .nav-toggle-bar::after, .nav-toggle.expanded .nav-toggle-bar::before {
+
+  background: white;
+
+  margin-top: 0;
+
+}
+
+ 
+
+.nav-toggle.expanded .nav-toggle-bar::after {
+
+  -ms-transform: rotate(45deg);
+
+  -webkit-transform: rotate(45deg);
+
+  transform: rotate(45deg);
+
+}
+
+ 
+
+.nav-toggle.expanded .nav-toggle-bar::before {
+
+  -ms-transform: rotate(-45deg);
+
+  -webkit-transform: rotate(-45deg);
+
+  transform: rotate(-45deg);
+
+}  
+    </style>
+    </head>
+    
+<body style=background-color:#4682B4> 
+    <article>
+        <header>
+            <h1 style=color:white;text-align:center><b><i><marquee>Technologies used for Web Development</marquee></i></b></h1>
+            </header>
+            </article>
+    
+
+<div class="nav-toggle">
+
+  <div class="nav-toggle-bar">
+    </div>
+</div>
+
+<nav class="nav">
+
+  <ul>
+      <li><a href="#" style=color:white onclick="javascript:myFunction();">HTML</a></li>
+
+    <li><a href="#" style=color:white onclick="javascript:myFunction1();">CSS</a></li>
+
+    <li><a href="#" style=color:white onclick="javascript:myFunction2();">JAVASCRIPT</a></li>
+
+    <li><a href="#" style=color:white onclick="javascript:myFunction3();">BOOTSTRAP</a></li>
+      
+    <li><a href="#" style=color:white onclick="javascript:myFunction4();">PHP</a></li>  
+
+  </ul>
+
+</nav>
+
+<h3 id="demo" align="center" style=color:white></h3>
+    
+      
+ <script>
+(function() {
+
+ 
+
+  var hamburger = {
+
+    navToggle: document.querySelector('.nav-toggle'),
+
+    nav: document.querySelector('nav'),
+
+ 
+
+    doToggle: function(e) {
+
+      e.preventDefault();
+
+      this.navToggle.classList.toggle('expanded');
+
+      this.nav.classList.toggle('expanded');
+
+    }
+
+  };
+
+ 
+
+  hamburger.navToggle.addEventListener('click', function(e) { hamburger.doToggle(e); });
+
+  hamburger.nav.addEventListener('click', function(e) { hamburger.doToggle(e); });
+
+ 
+
+}());
+     
+     
+function myFunction() {
+    
+    document.getElementById("demo").innerHTML= "  HTML is a hypertext markup language.";
+}
+     
+function myFunction1() {
+    
+    document.getElementById("demo").innerHTML= "CSS is a language that describes the style of an HTML document.";
+} 
+     
+function myFunction2() {
+    
+    document.getElementById("demo").innerHTML= "JavaScript is a programming language mostly used to dynamically script webpages on the client side, but it is also often utilized on the server-side.";
+} 
+    
+function myFunction3() {
+    
+    document.getElementById("demo").innerHTML= "Bootstrap is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile-first websites..";
+} 
+
+ function myFunction4() {
+    
+    document.getElementById("demo").innerHTML= "PHP is a server scripting language, and a powerful tool for making dynamic and interactive Web pages. ";
+}   
+    
+</script>    
+    
+</body>
+    
+
+</html>
